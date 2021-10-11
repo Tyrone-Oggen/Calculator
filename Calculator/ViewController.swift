@@ -18,7 +18,9 @@ class ViewController: UIViewController {
         
         isFinishedTypingNumber = true
         
-        let number = Double(displayLabel.text!) ?? 0
+        guard let number = Double(displayLabel.text!) else {
+            fatalError("Cannot convert display label text to a Double.")
+        }
     
     }
 
